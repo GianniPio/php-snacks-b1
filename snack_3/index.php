@@ -65,9 +65,9 @@
                 $post = $posts[$key][$j];
 
                 echo "<p>
-                <h3>" . 
+                <h1>" . 
                     $post['title'] . "
-                </h3>
+                </h1>
     
                 <h4>" . 
                     $post['author'] . "

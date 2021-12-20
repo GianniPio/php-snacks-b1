@@ -17,6 +17,7 @@
     $lenghtName = strlen($name); // lunghezza della stringa
     $chiocciola = strpos($mail, "@"); // stringa contiene carattere @
     $punto = strpos($mail, "."); //stringa contiene carattere .
+    $mailOk = $chiocciola !== false && $punto !== false; // verificare che la mail contiene in caratteri
     $numero = is_numeric($age); // verificare che sia un numero
 
     ?>
@@ -26,7 +27,7 @@
     <div>
       <?php
 
-        if (($lenghtName >= 3) && ($chiocciola && $punto) && ($numero)) {
+        if (($lenghtName >= 3) && ($mailOk) && ($numero)) {
             echo '<p class="green">Accesso riusciuto </p>';
         }else {
             echo '<p class="red">Accesso negato </p>';

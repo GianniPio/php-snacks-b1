@@ -10,14 +10,36 @@
 
     <?php
     // variabili per i parametri da passare
-    $name= $_GET["name"];
-    $mail= $_GET["mail"];
-    $age= $_GET["age"];
+    $name= $_GET['name'];
+    $mail= $_GET['mail'];
+    $age= $_GET['age'];
+
+    $lenghtName = strlen($name); // lunghezza della stringa
+    $chiocciola = strpos($mail, "@"); // stringa contiene carattere @
+    $punto = strpos($mail, "."); //stringa contiene carattere .
+    $numero = is_numeric($age); // verificare che sia un numero
 
     ?>
 
 </head>
 <body>
+    <div>
+      <?php
+
+        if (($lenghtName >= 3) && ($chiocciola && $punto) && ($numero)) {
+            echo '<p class="green">Accesso riusciuto </p>';
+        }else {
+            echo '<p class="red">Accesso negato </p>';
+        }
+
+        echo $name . " (" . $lenghtName . ")" . "<br>";
+        echo $mail . "<br>";
+        echo $age . "<br>";
+
+    ?>  
+    </div>
+    
+
  
     
 </body>

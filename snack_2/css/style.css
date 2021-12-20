@@ -9,3 +9,11 @@ body {
     font-weight: bold;
     margin-top: 2%;
 }
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}

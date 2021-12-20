@@ -52,7 +52,17 @@
     <div>
         <?php 
 
-        var_dump($matches);
+        // var_dump($matches);
+        
+
+        for ($i=0; $i < count($matches); $i++) { 
+            
+            echo $matches[$i]["teamCasa"] . " - " . 
+            $matches[$i]["teamOspite"] . " | " . 
+            $matches[$i]["scoreCasa"] . " - " . 
+            $matches[$i]["scoreOspite"];
+            echo "<br><br>";
+        }
 
         ?>
     </div>

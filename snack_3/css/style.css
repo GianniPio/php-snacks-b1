@@ -4,8 +4,10 @@
 }
 
 body {
-    background-color: purple;
-    color: white;
     font-weight: bold;
     margin-top: 2%;
+}
+
+p {
+    border: 1px solid black;
 }

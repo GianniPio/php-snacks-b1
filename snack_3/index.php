@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 
+    <!-- Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post. -->
+
     <?php
 
     $posts = [
@@ -53,7 +55,34 @@
 </head>
 <body>
     <div>
+        <?php
 
+        $keys= array_keys($posts);
+
+        for ($i=0; $i < count($keys); $i++) { 
+            $key = $keys[$i];
+            for ($j=0; $j < count($posts[$key]); $j++) { 
+                $post = $posts[$key][$j];
+
+                echo "<p>
+                <h3>" . 
+                    $post['title'] . "
+                </h3>
+    
+                <h4>" . 
+                    $post['author'] . "
+                </h4>
+    
+                <span>" . 
+                    $post['text'] . "
+                </span>
+            </p>";
+            }
+        }
+
+        ?>
+
+        
     </div>
     
 </body>

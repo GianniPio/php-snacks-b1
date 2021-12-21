@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Post</title>
 
     <!-- Creare un array di array. Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01-01-2007 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post. -->
 
@@ -57,26 +57,22 @@
     <div>
         <?php
 
-        $keys= array_keys($posts);
+        $dates = array_keys($posts);
+        // var_dump ($dates); stampa le date
 
-        for ($i=0; $i < count($keys); $i++) { 
-            $key = $keys[$i];
-            for ($j=0; $j < count($posts[$key]); $j++) { 
-                $post = $posts[$key][$j];
+        for ($i=0; $i < count($dates); $i++) { 
+            $date = $dates[$i];
+            echo "<h2>" . $date . "</h2>";
 
-                echo "<p>
-                <h1>" . 
-                    $post['title'] . "
-                </h1>
-    
-                <h4>" . 
-                    $post['author'] . "
-                </h4>
-    
-                <span>" . 
-                    $post['text'] . "
-                </span>
-            </p>";
+            $subPosts = $posts[$date];
+
+            for ($x=0; $x < count($subPosts) ; $x++) { 
+                
+                $post= $subPosts[$x];
+
+                echo "<p> <h4>" . $post['title'] . "</h4>"
+                . $post['text'] . "<br>"
+                . $post['author'] . "</p><br><br>";
             }
         }
 
